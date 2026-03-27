@@ -1,0 +1,8 @@
+﻿.stack-work/
+*.dat
+*.csv
+*.txt
+*.exe
+.gemini/
+.agents/
+.bin/

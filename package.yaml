@@ -1,0 +1,53 @@
+name:                ai-denoising-project
+version:             0.1.0.0
+github:              "githubuser/ai-denoising-project"
+license:             BSD-3-Clause
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2026 Author name here"
+
+extra-source-files:
+- README.md
+- CHANGELOG.md
+
+description: Pure Haskell denoising autoencoder
+
+dependencies:
+- base >= 4.7 && < 5
+- vector
+- random
+- binary
+- bytestring
+- directory
+- parallel
+- deepseq
+
+ghc-options:
+- -Wall
+- -O2
+
+library:
+  source-dirs: src
+  exposed-modules:
+    - Preprocessing
+    - Autoencoder
+    - Training
+    - Evaluation
+
+executables:
+  ai-denoising-project-exe:
+    main: Main.hs
+    source-dirs: app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+      - ai-denoising-project
+
+tests:
+  ai-denoising-project-test:
+    main: Spec.hs
+    source-dirs: test
+    dependencies:
+      - ai-denoising-project
